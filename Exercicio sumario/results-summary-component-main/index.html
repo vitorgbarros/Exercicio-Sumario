@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Results summary component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
+<!--Inicio da formatação de estilo-->
+  <style>
+
+    body{
+      font-family: 'Hanken Grotesk', sans-serif;
+      margin: 0 auto;
+    }
+    /*Formatação parte roxa*/
+    #div-roxo{
+      margin: 0 auto;
+      width: 375px;
+      height: 360px;
+      text-align: center;
+      background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+      padding: 7px 50px 45px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+    .divroxo-paragrafo{
+      color: hsl(0, 0%, 100%, 0.7);
+      font-size: 18px;
+      margin: 10px 0 30px;
+    }
+    .divroxo-titulo{
+      font-size: 30px;
+      color: hsl(0, 0%, 100%);
+      margin: 25px 0 0;
+      line-height: 50px;
+    }
+    .divroxo-subtitulo{
+      color: hsl(0, 0%, 100%, 0.7);
+      margin: 0;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    #div-circulo{
+      background-image: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .divcirculo-titulo{
+      color: hsl(0, 0%, 100%);
+      margin: 0 auto;
+      padding: 27px 0 0;
+      text-align: center;
+      font-size: 65px;
+    }
+    .divcirculo-subtitulo{
+      color: hsl(0, 0%, 100%, 0.7);
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      margin: 0 auto;
+    }
+    /*Formatação parte roxa*/
+
+    /*Formatação Sumário*/
+    /*Sumario*/
+    #div-sumario{
+      width: 375px;
+      height: 500px;
+      margin: 0 auto;
+      /*background: #ccc;*/
+      padding: 30px;
+    }
+    .divsumario-titulo{
+      color: hsl(224, 30%, 27%);
+      margin: 0 0 30px;
+      font-size: 25px;
+    }
+    /*Sumario*/
+
+    /*Card reaction*/
+    .div-card-reaction{
+      display: flex;
+      align-items: center;
+      background: hsl(0, 100%, 67%, 0.20);
+      width: 375px;
+      margin: 0 auto;
+      border-radius: 13px;
+    }
+    .img-card{
+      padding: 13px;
+    }
+    .card-reaction-titulo{
+      color: hsl(0, 100%, 67%);
+      padding: 0 170px 0 0;
+      font-size: 18px;
+      align-self: center;
+    }
+    .card-reaction-nota{
+      font-size: 20px;
+      text-decoration: none;
+      color: hsl(224, 30%, 27%);
+    }
+    /*Card reaction*/
+
+    /*Card memory*/
+    .div-card-memory{
+      display: flex;
+      align-items: center;
+      background: hsl(39, 100%, 56%, 0.20);
+      width: 375px;
+      margin: 20px 0 0 0;
+      border-radius: 13px;
+    }
+    .img-card{
+      padding: 13px;
+    }
+    .card-memory-titulo{
+      color: hsl(39, 100%, 56%);
+      padding: 0 175px 0 0;
+      font-size: 18px;
+      align-self: center;
+    }
+    .card-memory-nota{
+      font-size: 20px;
+      text-decoration: none;
+      color: hsl(224, 30%, 27%);
+    }
+    /*Card memory*/
+
+    /*Card Verbal*/
+    .div-card-verbal{
+      display: flex;
+      align-items: center;
+      background: hsl(166, 100%, 37%, 0.20);
+      width: 375px;
+      margin: 20px 0 0 0;
+      border-radius: 13px;
+    }
+    .img-card{
+      padding: 13px;
+    }
+    .card-verbal-titulo{
+      color: hsl(166, 100%, 37%);
+      padding: 0 190px 0 0;
+      font-size: 18px;
+      align-self: center;
+    }
+    .card-verbal-nota{
+      font-size: 20px;
+      text-decoration: none;
+      color: hsl(224, 30%, 27%);
+    }
+    /*Card Verbal*/
+
+    /*Card Visual*/
+    .div-card-visual{
+      display: flex;
+      background: hsl(234, 85%, 45%, 0.20);
+      width: 375px;
+      margin: 20px 0 0 0;
+      border-radius: 13px;
+    }
+    .img-card{
+      padding: 13px;
+    }
+    .card-visual-titulo{
+      color: hsl(234, 85%, 45%);
+      padding: 0 190px 0 0;
+      font-size: 18px;
+      align-self: center;
+    }
+    .card-visual-nota{
+      font-size: 20px;
+      text-decoration: none;
+      color: hsl(224, 30%, 27%);
+    }
+
+
+    /*Formatação botão*/
+      .button{
+        color: white;
+        width: 300px;
+        margin: 50px 25px auto;
+        border-radius: 100px;
+        padding: 15px;
+        text-align: center;
+        background: hsl(224, 30%, 27%);
+        display: inline-block;
+        font-size: 25px;
+        transition: .5s;
+      }
+      a{
+        text-decoration: none;
+      }
+      a:hover{
+        background-color: hsla(256, 72%, 46%, 1);
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+      }
+    /*Formatação botão*/
+    /*Formatação Sumário*/
+
+    /*Media query para desktop*/
+    @media screen and (min-width: 1440px){
+      .main-div{
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+      }
+      #div-roxo{
+        border-radius: 40px;
+        width: 340px;
+        height: 540px;
+        margin: 0 auto;
+        margin-top: 170px;
+        margin-right: 0;
+        box-shadow: -7px 9px 14px -3px rgba(0,0,0,0.21);
+      }
+      #div-roxo p{
+        font-size: 26px;
+      }
+      .divroxo-subtitulo{
+        font-size: 24px;
+      }
+      .divroxo-titulo{
+        font-size: 43px;
+        line-height: 100px;
+      }
+      #div-circulo{
+        width: 260px;
+        height: 260px;
+        margin-bottom: 25px;
+      }
+      .divcirculo-titulo{
+        font-size: 100px;
+        padding-top: 50px;
+      }
+      #div-sumario{
+        margin-left: 0;
+        margin-top: 170px;
+      }
+    }
+    /*Media query para desktop*/
+
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+  <!--Final da formatação de estilo-->
+
+</head>
+<body>
+  <div class="main-div">
+    <div id="div-roxo">
+      <p class="divroxo-paragrafo">Your Result</p>
+      <div id="div-circulo">
+        <h1 class="divcirculo-titulo">76</h1>
+        <h2 class="divcirculo-subtitulo">of 100</h2>
+      </div>
+      <h1 class="divroxo-titulo">Great</h1>
+      <h2 class="divroxo-subtitulo">You scored higher than 65% of the people who have taken these tests.</h2>
+    </div>
+
+    <div id="div-sumario">
+      <h1 class="divsumario-titulo">Summary</h1>
+
+      <div class="div-card-reaction">
+        <img src="../results-summary-component-main/assets/images/icon-reaction.svg" alt="Icon reaction" class="img-card">
+        <h1 class="card-reaction-titulo">Reaction</h1>
+        <h2 class="card-reaction-nota"><strong>80</strong> / 100 </h2>
+      </div>
+
+      <div class="div-card-memory">
+        <img src="../results-summary-component-main/assets/images/icon-memory.svg" alt="Icon Memory" class="img-card">
+        <h1 class="card-memory-titulo">Memory</h1>
+        <h2 class="card-memory-nota"><strong>92</strong> / 100</h2>
+      </div>
+
+      <div class="div-card-verbal">
+        <img src="../results-summary-component-main/assets/images/icon-verbal.svg" alt="Icon verbal" class="img-card">
+        <h1 class="card-verbal-titulo">Verbal</h1>
+        <h2 class="card-verbal-nota"><strong>61</strong> / 100</h2>
+      </div>
+
+      <div class="div-card-visual">
+        <img src="../results-summary-component-main/assets/images/icon-visual.svg" alt="Icon visual" class="img-card">
+        <h1 class="card-visual-titulo">Visual</h1>
+        <h2 class="card-visual-nota"><strong>72</strong> / 100</h2>
+      </div>
+
+      <a href="#" class="button">Continue</a>
+    </div>
+</div>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Vitor Gouveia</a>.
+  </div>
+
+  <!-- <img src="../results-summary-component-main/design/desktop-design.jpg" id="img-exemplo">-->
+</body>
+</html>
